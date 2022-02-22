@@ -1,3 +1,5 @@
+<% if @current_user %>
+        
 <h1>Do the TODOs</h1>
 
 <%= form_with model: @task do |form| %>
@@ -17,3 +19,7 @@
     </tr>
   <% end %>
 </table>
+
+  <% else %>
+      <% redirect_to "/sessions/new" %>
+  <% end %>
